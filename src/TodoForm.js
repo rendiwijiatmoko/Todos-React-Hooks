@@ -7,19 +7,26 @@ import {
 }from 'react-native';
 
 const TodoForm = ({saveTodo}) => {
-    const [value, setValeu] = useState('');
+    const [todos, setTodos] = useState('');
+
+    add = () => {
+        setValue(...todos, todos)
+    }
 
     return(
         <View>
             <TextInput 
                 placeholder="Add todos"
-                value = {value}
-                onChangeText = {e => e.target.value}
+                value = {todos}
+                onChangeText = {e => setTodos(e)}
             />
             <Button 
                 title="add"
-                onPress={() => alert('yo')}
+                onPress={() => {add}}
             />
+            <Text>
+                {todos}
+            </Text>
         </View>
     );
 }
